@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { createTodo } from "../redux/todos/actions";
+import { createTodo, deleteTodo } from "../redux/todos/actions";
 
 const Todos = () => {
   const { todo } = useSelector((state) => state);
@@ -9,6 +9,10 @@ const Todos = () => {
 
   const handleTodoCreate = () => {
     dispatch(createTodo(input));
+  };
+
+  const handleDeleteTodo = (item) => {
+    dispatch(deleteTodo(item));
   };
   return (
     <>
@@ -47,7 +51,10 @@ const Todos = () => {
                               key={index}
                             >
                               <h6>{item}</h6>
-                              <button className="btn btn-sm btn-danger">
+                              <button
+                                className="btn btn-sm btn-danger"
+                                onClick={() => handleDeleteTodo(item)}
+                              >
                                 X
                               </button>
                             </li>

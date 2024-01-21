@@ -1,0 +1,18 @@
+{
+  "student": [
+    {
+      "id": "2",
+      "name": "Johurul Islam",
+      "roll": "01001",
+      "email": "johurul@gmail.com",
+      "photo": "https://unitedthemes.com/wp-content/uploads/2018/09/team1.jpg"
+    },
+    {
+      "id": "3",
+      "name": "Nasrin Islam",
+      "roll": "01001",
+      "email": "nasrin@gmail.com",
+      "photo": "https://babesredefined.com/wp-content/uploads/2019/08/team-member-02.jpg"
+    }
+  ]
+}

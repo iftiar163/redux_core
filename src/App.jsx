@@ -1,12 +1,11 @@
 import "./App.css";
-import Counter from "./components/Counter";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Todos from "./components/Todos";
+import Student from "./components/Student";
 
 function App() {
   return (
     <>
-      <Todos />
+      <Student />
     </>
   );
 }

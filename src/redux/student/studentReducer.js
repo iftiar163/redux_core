@@ -1,4 +1,7 @@
 import {
+  STUDENT_CREATE_FULFILLED,
+  STUDENT_CREATE_PENDING,
+  STUDENT_CREATE_REJECTED,
   STUDENT_DATA_FULFILLED,
   STUDENT_DATA_PENDING,
   STUDENT_DATA_REJECTED,
@@ -50,6 +53,27 @@ const studentReducer = (state = initValue, action) => {
         ...state,
         loading: false,
         error: "Data Connection Failed",
+      };
+
+    case STUDENT_CREATE_PENDING:
+      return {
+        ...state,
+        loading: true,
+      };
+
+    case STUDENT_CREATE_FULFILLED:
+      return {
+        ...state,
+        loading: false,
+        student: [...state.student, action.payload],
+        message: "Studnet Data Saved Successfully",
+      };
+
+    case STUDENT_CREATE_REJECTED:
+      return {
+        ...state,
+        loading: false,
+        error: "Data Creation Failed",
       };
 
     default:

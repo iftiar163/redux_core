@@ -1,5 +1,8 @@
 import axios from "axios";
 import {
+  STUDENT_CREATE_FULFILLED,
+  STUDENT_CREATE_PENDING,
+  STUDENT_CREATE_REJECTED,
   STUDENT_DATA_FULFILLED,
   STUDENT_DATA_PENDING,
   STUDENT_DATA_REJECTED,
@@ -27,5 +30,18 @@ export const deleteStudentData = (id) => async (dispatch) => {
     dispatch({ type: STUDENT_DELETE_FULFILLED, payload: id });
   } catch (error) {
     dispatch({ type: STUDENT_DELETE_REJECTED });
+  }
+};
+
+// Student Data Creat
+export const studentDataCreate = (data) => async (dispatch) => {
+  try {
+    dispatch({ type: STUDENT_CREATE_PENDING });
+
+    await axios.post("http://localhost:5050/student/", data);
+
+    dispatch({ type: STUDENT_CREATE_FULFILLED, payload: data });
+  } catch (error) {
+    dispatch({ type: STUDENT_CREATE_REJECTED });
   }
 };

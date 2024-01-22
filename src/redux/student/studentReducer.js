@@ -8,6 +8,9 @@ import {
   STUDENT_DELETE_FULFILLED,
   STUDENT_DELETE_PENDING,
   STUDENT_DELETE_REJECTED,
+  STUDENT_UPDATE_FULFILLED,
+  STUDENT_UPDATE_PENDING,
+  STUDENT_UPDATE_REJECTED,
 } from "./actionTypes";
 import { initValue } from "./initValue";
 
@@ -74,6 +77,33 @@ const studentReducer = (state = initValue, action) => {
         ...state,
         loading: false,
         error: "Data Creation Failed",
+      };
+
+    case STUDENT_UPDATE_PENDING:
+      return {
+        ...state,
+        loading: true,
+      };
+
+    case STUDENT_UPDATE_FULFILLED:
+      return {
+        ...state,
+        loading: false,
+        message: "Data Update Successfull",
+        student: state.student.map((item) => {
+          if (item.id == action.payload.id) {
+            return action.payload;
+          } else {
+            return item;
+          }
+        }),
+      };
+
+    case STUDENT_UPDATE_REJECTED:
+      return {
+        ...state,
+        loading: false,
+        error: "Data Update Failed",
       };
 
     default:

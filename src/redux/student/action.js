@@ -9,6 +9,9 @@ import {
   STUDENT_DELETE_FULFILLED,
   STUDENT_DELETE_PENDING,
   STUDENT_DELETE_REJECTED,
+  STUDENT_UPDATE_FULFILLED,
+  STUDENT_UPDATE_PENDING,
+  STUDENT_UPDATE_REJECTED,
 } from "./actionTypes";
 
 // Get Data
@@ -33,7 +36,7 @@ export const deleteStudentData = (id) => async (dispatch) => {
   }
 };
 
-// Student Data Creat
+// Student Data Create
 export const studentDataCreate = (data) => async (dispatch) => {
   try {
     dispatch({ type: STUDENT_CREATE_PENDING });
@@ -45,3 +48,21 @@ export const studentDataCreate = (data) => async (dispatch) => {
     dispatch({ type: STUDENT_CREATE_REJECTED });
   }
 };
+
+// Student Data Create
+export const studentDataUpdate =
+  ({ id, data }) =>
+  async (dispatch) => {
+    try {
+      dispatch({ type: STUDENT_UPDATE_PENDING });
+
+      await axios.patch(`http://localhost:5050/student/${id}`, data);
+
+      dispatch({
+        type: STUDENT_UPDATE_FULFILLED,
+        payload: { id: id, ...data },
+      });
+    } catch (error) {
+      dispatch({ type: STUDENT_UPDATE_REJECTED });
+    }
+  };

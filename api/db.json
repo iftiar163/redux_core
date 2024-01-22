@@ -2,7 +2,7 @@
   "student": [
     {
       "id": "2",
-      "name": "Johurul Islam",
+      "name": "Johurul Islam Khan",
       "roll": "01001",
       "email": "johurul@gmail.com",
       "photo": "https://unitedthemes.com/wp-content/uploads/2018/09/team1.jpg"
@@ -13,6 +13,27 @@
       "roll": "01001",
       "email": "nasrin@gmail.com",
       "photo": "https://babesredefined.com/wp-content/uploads/2019/08/team-member-02.jpg"
+    },
+    {
+      "id": "375d",
+      "name": "Kader Mulla",
+      "roll": "001100",
+      "email": "iftiar.hossain163@gmail.com",
+      "photo": "https://billey-4437.kxcdn.com/wp-content/uploads/2019/08/team-member-01.jpg"
+    },
+    {
+      "id": "a24b",
+      "name": "Md. Iftiar Hossain",
+      "roll": "002200",
+      "email": "iftiar.hossain@aadibd.com",
+      "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvuBaqCBHZZeBxMgxTr1Nzxt2IHFLxgURKeHHKtlOE-pGxbQq2EdAqZQorxa0v22r0Bd0&usqp=CAU"
+    },
+    {
+      "id": "1e0a",
+      "name": "Ishrat Hossain",
+      "roll": "174955",
+      "email": "iftiarahmed96@gmail.com",
+      "photo": "https://powerpackelements.com/wp-content/uploads/2017/11/Team-memeber-13.png"
     }
   ]
 }
